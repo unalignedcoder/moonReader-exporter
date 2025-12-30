@@ -1,5 +1,4 @@
-<img width="256" height="256" alt="image" src="https://github.com/user-attachments/assets/e38c6c7e-45cc-484e-804b-80b497c8f6c2" /><img width="256" height="256" alt="Asset 1@2x" src="https://github.com/user-attachments/assets/83666882-a4a5-47ed-b2aa-eb71cd517d2d" />
-
+<img width="538" height="476" alt="Asset 3" src="https://github.com/user-attachments/assets/bd4725c5-c451-4a95-ba6b-21468a078e51" />
 
 # Moon+ Reader Exporter
 
