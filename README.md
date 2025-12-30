@@ -16,7 +16,7 @@ It reads the e-book files from your device to extract the text *surrounding* you
 <br /><sup>Highlights are much more useful if saved in context.</sup></p>
 
 It respects **the highlight colors** selected in MoonReader.
-<p><img width="270" height="265" alt="image" src="https://github.com/user-attachments/assets/3db8179b-24a1-45f6-b3a0-da92ac225013" /><img width="320" height="221" alt="image" src="https://github.com/user-attachments/assets/ad42e023-d014-4d62-9726-908d6a43253c" />
+<p><img width="270" height="265" alt="image" src="https://github.com/user-attachments/assets/3db8179b-24a1-45f6-b3a0-da92ac225013" /><img height="265" alt="image" src="https://github.com/user-attachments/assets/ad42e023-d014-4d62-9726-908d6a43253c" />
 <br /><sup>The original highlights in Moon+ Reader, and the exported HTML file.</sup></p>
 
 Furthermore:
