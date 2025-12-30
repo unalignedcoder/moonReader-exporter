@@ -4,9 +4,9 @@
 
 Standalone Python tool to export highlights and notes from **Moon+ Reader** (Android) to your PC as clean, formatted HTML files.
 
-This script **does not require Calibre**, works with or without **Root**, and bypasses common MTP connection issues by using ADB (included).
+This script **does not require Calibre** and works with or without **Root**. It uses [ADB](https://developer.android.com/tools/adb) (included).
 
-## 🚀 Features
+## Features
 
 This script extract **notes** and **highlights** from Moon+ Reader books, producing them in clean, well formatted html files.
 
@@ -21,14 +21,12 @@ It respects **the highlight colors** selected in MoonReader.
 
 Furthermore:
 
-* **ADB**: It uses ADB to directly access Moon+ Reader backups and databases, bypassing MTP filter issues.
-* **Smart "Lost Book" Recovery:** If a book was moved after import (e.g., from Downloads to Books), the script automatically searches the library to find it.
-* **Incremental Exports:** Tracks export history and only processes *new* highlights on subsequent runs, saving massive amounts of time.
+* If a book was moved after import (e.g., from Downloads to Books), the script automatically searches the library to find it.
+* Tracks export history and only processes *new* highlights on subsequent runs, saving massive amounts of time.
 * **Dual Mode:**
     * **Root Mode:** Directly pulls the live database from `/data/data/` on Android.
-    * **Non-Root Mode:** Automatically finds and extracts `.mrpro` backups.
-* **Cross-Platform:** Works on Windows, macOS, and Linux.
-* **Configurable:** Auto-generates a JSON config file to tweak paths and settings.
+    * **Non-Root Mode:** Automatically finds and extracts Notes from Moon+ Reader backups.
+* Works on Windows, macOS, and Linux.
 
 ## 📋 Prerequisites
 
@@ -38,12 +36,11 @@ Furthermore:
 
 ## 📦 Installation
 
-1.  Clone or download this repository.
+1.  Download `mre.py` and `mre.json` to your PC.
 2.  Install the required Python library for HTML parsing:
     ```bash
     pip install beautifulsoup4
     ```
-3.  Connect your Android phone via USB.
 
 ## ⚙️ Usage
 
