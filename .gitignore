@@ -1,5 +1,11 @@
-#script export folder
-/MoonPro_Exports
+# script export folder
+/MoonReader_notes
+
+# Image assets
+/images
 
 # Standard Python gitignore
 __pycache__/`n*.pyc`n.venv/`n.env
+
+# log file
+mre.log
