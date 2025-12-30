@@ -9,16 +9,17 @@ This script **does not require Calibre**, works with or without **Root**, and by
 
 ## 🚀 Features
 
-This script uses ADB to directly access Moon+ Reader backups and databases, bypassing MTP filter issues.
+This script extract **notes** and **highlights** from Moon+ Reader books, producing them in clean, well formatted html files.
 
-It extract **notes** and **highlights** from books, producing them in clean, well formatted html files.
+It reads the e-book files from your device to extract the text *surrounding* your highlights, giving **full context**.
 
-It pulls the e-book file from your device to extract the text *surrounding* your highlight, giving full context.
+It respects **the highlight colors** selected in MoonReader.
 
-It respects the highlight colors selected in MoonReader.
+<img width="1210" height="211" alt="image" src="https://github.com/user-attachments/assets/2f4172ba-92f2-46ba-abba-b0b3c17136c1" />
 
 Furthermore:
 
+* **ADB**: It uses ADB to directly access Moon+ Reader backups and databases, bypassing MTP filter issues.
 * **Smart "Lost Book" Recovery:** If a book was moved after import (e.g., from Downloads to Books), the script automatically searches the library to find it.
 * **Incremental Exports:** Tracks export history and only processes *new* highlights on subsequent runs, saving massive amounts of time.
 * **Dual Mode:**
@@ -42,15 +43,25 @@ Furthermore:
     ```
 3.  Connect your Android phone via USB.
 
-## ⚙️ Configuration
+## ⚙️ Usage
 
-Run the script once to generate the default configuration file: `mre.json`.
+1) If your phone is rooted, you can jump to step 3;
+2) Create a Backup from within Moon+ Reader (Settings > Backup.) Make sure it is saved somewhere within the Moon+ Reader `/Books` subfolders;
+3) If needed, edit options in the `mre.json` configuration file:
 
-```json
-{
-    "use_root": true,
-    "export_dir": ".../MoonReader_notes",
-    "manual_adb_path": ".../adb/adb.exe",
-    "context_chars": 400,
-    "moonreader_books": "/sdcard/Books/"
-}
+   <img width="450" height="221" alt="image" src="https://github.com/user-attachments/assets/6f2725ab-e63b-4c87-a5e0-3b079786335a" />
+   
+   - Consider that paths can be relative (e.g. 'MoonReader_notes') or absolute (e.g. 'C:/Backups'). Under Windows, always use forward slashes `/`, or double back slashes `\\`;
+   - Set `context_chars` to indicate the amount of characters preceding and following the highlighted quote, for context;
+   - Set `disable_context` to `true` to skip book downloading/parsing entirely (significantly faster, but highlights and notes only);
+   - Set `enable_logging` to `true` to save a detailed session log to the export folder;
+   - Set `use_root` to `false` to force extraction from the Backup file. If `true`, on a rooted phone it reads the database directly from the `/data/data` Moonreader folder.
+
+5) Connect the phone to the PC, and make sure [USB Debugging](https://www.embarcadero.com/starthere/xe5/mobdevsetup/android/en/enabling_usb_debugging_on_an_android_device.html) is enabled:
+   <img width="540" height="250" alt="image" src="https://github.com/user-attachments/assets/a70a6f03-5391-4066-8ebc-647de2329365" />
+
+6) Launch the script from your pc: `python mre.py`
+   <img width="927" height="233" alt="image" src="https://github.com/user-attachments/assets/76a4bbd0-e54a-44b2-93a0-1ba721cdb4af" />
+
+7) Enjoy fantastically well formatted Higlights and Notes saved for you in the context in which they were first taken, for research or memory.
+
