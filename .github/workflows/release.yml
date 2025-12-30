@@ -1,11 +1,11 @@
-name: Release wht.ps1
+name: Release mre.py
 
 on:
   push:
     branches:
       - main
     paths:
-      - 'wht.ps1' # Only trigger if the script itself changes
+      - 'mre.py' # Only trigger if the script itself changes
 
 permissions:
   contents: write

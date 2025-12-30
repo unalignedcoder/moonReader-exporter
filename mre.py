@@ -6,9 +6,10 @@
     - Fixed inconsistencies with MoonReader highlight styles.
     - Improved Terminal output
     - Improved HTML rendering output
+    - Fixed release workflow
     - Many minor fixes and improvements.
 """
-__version__ = "1.0.3"
+__version__ = "1.0.4"
 
 import os
 import sys
@@ -625,3 +626,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
