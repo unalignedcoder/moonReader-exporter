@@ -36,7 +36,7 @@ Furthermore:
 
 ## Installation
 
-1.  Download `mre.py` and `mre.json` to your PC.
+1.  Download `mre.py` and `mre.json` to your PC. The `adb` folder as well, unless you already have adb in your PATH.
 2.  Install the required Python library for HTML parsing:
     ```bash
     pip install beautifulsoup4
