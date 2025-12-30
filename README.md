@@ -36,7 +36,7 @@ Furthermore:
 
 ## Installation
 
-1.  Download `mre.py` and `mre.json` to your PC. The `adb` folder as well, unless you already have adb in your PATH.
+1.  Grab the zip file from the [latest release](https://github.com/unalignedcoder/moonReader-exporter/releases). What you need are `mre.py`, `mre.json` and the `adb` folder as well, unless you already have adb in your PATH.
 2.  Install the required Python library for HTML parsing:
     ```bash
     pip install beautifulsoup4
@@ -61,6 +61,6 @@ Furthermore:
 7) Launch the script from your pc: `python mre.py`   
    <p><img width="924" height="271" alt="image" src="https://github.com/user-attachments/assets/b86766e5-c916-4ea4-9f69-fd438d13b4a2" /></p>
 
-9) Enjoy fantastically well formatted Higlights and Notes saved for you in the context in which they were first taken, for research or memory.
+9) Enjoy fantastically well formatted Highlights and Notes saved for you in the context in which they were first taken, for research or memory.
 
 <p align=center>Why, thank you for asking!<br />👉 You can donate to my projects <a href="https://www.buymeacoffee.com/unalignedcoder" target="_blank" title="buymeacoffee.com">here</a>👈</p>
