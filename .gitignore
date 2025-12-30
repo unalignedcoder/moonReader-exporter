@@ -1,0 +1,5 @@
+#script export folder
+/MoonPro_Exports
+
+# Standard Python gitignore
+__pycache__/`n*.pyc`n.venv/`n.env

@@ -1,0 +1,82 @@
+name: Release wht.ps1
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'wht.ps1' # Only trigger if the script itself changes
+
+permissions:
+  contents: write
+
+env:
+  SCRIPT_NAME: "mre.py"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Set up Git identity
+      run: |
+        git config --global user.name "${{ github.actor }}"
+        git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+
+    # Extract version from the specific script line: $scriptVersion = "x.x.x"
+    - name: Extract version
+      id: extract_version
+      run: |
+        # Looks for __version__ = "x.x.x"
+        NEW_VERSION=$(grep -Po '(?<=__version__ = ")([0-9]+\.[0-9]+\.[0-9]+)' ${{ env.SCRIPT_NAME }})
+        echo "Detected version: $NEW_VERSION"
+        echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_ENV
+
+    # Check if this version tag already exists to avoid errors/duplicates
+    - name: Check if tag exists
+      id: check_tag
+      run: |
+        if git rev-parse "v$NEW_VERSION" >/dev/null 2>&1; then
+          echo "Tag v$NEW_VERSION already exists."
+          echo "TAG_EXISTS=true" >> $GITHUB_ENV
+        else
+          echo "Tag v$NEW_VERSION does not exist. Proceeding with release."
+          echo "TAG_EXISTS=false" >> $GITHUB_ENV
+        fi
+
+    # Create the git tag and push it
+    - name: Create and push tag
+      if: env.TAG_EXISTS == 'false'
+      run: |
+        git tag -a "v$NEW_VERSION" -m "Release version $NEW_VERSION"
+        git push origin "v$NEW_VERSION"
+
+    # Extract the .NOTES block for the release body
+    - name: Extract release notes
+      if: env.TAG_EXISTS == 'false'
+      run: |
+        # Looks for .NOTES inside the file, stops at the closing """
+        # sed -n '/^.NOTES/,/"""/p' grabs the block
+        # head -n -1 removes the last line (the closing """)
+        RELEASE_NOTES=$(sed -n '/^.NOTES/,/"""/p' ${{ env.SCRIPT_NAME }} | head -n -1)
+        echo "RELEASE_NOTES<<EOF" >> $GITHUB_ENV
+        echo "$RELEASE_NOTES" >> $GITHUB_ENV
+        echo "EOF" >> $GITHUB_ENV
+
+    # Create the GitHub Release (No files attached, just the tag and notes)
+    - name: Create Release
+      if: env.TAG_EXISTS == 'false'
+      uses: softprops/action-gh-release@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.PAT_GITHUB }} 
+      with:
+        tag_name: v${{ env.NEW_VERSION }}
+        name: Release v${{ env.NEW_VERSION }}
+        body: ${{ env.RELEASE_NOTES }}
+        draft: false
+        prerelease: false
