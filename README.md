@@ -8,7 +8,7 @@ This script **does not require Calibre** and works with or without **Root**. It 
 
 ## Features
 
-This script extract **notes** and **highlights** from Moon+ Reader books, producing them in clean, well formatted html files.
+This script extracts **notes** and **highlights** from Moon+ Reader books, producing them in clean, well formatted html files.
 
 It reads the e-book files from your device to extract the text *surrounding* your highlights, giving **full context**.
 
@@ -28,13 +28,13 @@ Furthermore:
     * **Non-Root Mode:** Automatically finds and extracts Notes from Moon+ Reader backups.
 * Works on Windows, macOS, and Linux.
 
-## 📋 Prerequisites
+## Prerequisites
 
 1.  **Python 3.6+** installed on your computer.
 2.  **USB Debugging** enabled on your Android device.
 3.  **(Optional) Bundled ADB:** `adb.exe` (and its DLLs) can be found in the `/adb` folder next to the script. Otherwise, the script can use your system's ADB.
 
-## 📦 Installation
+## Installation
 
 1.  Download `mre.py` and `mre.json` to your PC.
 2.  Install the required Python library for HTML parsing:
@@ -42,7 +42,7 @@ Furthermore:
     pip install beautifulsoup4
     ```
 
-## ⚙️ Usage
+## Usage
 
 1) If your phone is rooted, you can jump to step 3;
 2) Create a Backup from within Moon+ Reader (Settings > Backup.) Make sure it is saved somewhere within the Moon+ Reader `/Books` subfolders;
