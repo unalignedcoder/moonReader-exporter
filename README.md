@@ -67,3 +67,4 @@ Furthermore:
 
 9) Enjoy fantastically well formatted Higlights and Notes saved for you in the context in which they were first taken, for research or memory.
 
+<p align=center>Why, thank you for asking!<br />👉 You can donate to my projects <a href="https://www.buymeacoffee.com/unalignedcoder" target="_blank" title="buymeacoffee.com">here</a>👈</p>
