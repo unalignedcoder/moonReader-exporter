@@ -2,7 +2,7 @@
 
 # Moon+ Reader Exporter
 
-Standalone Python tool to export highlights and notes from **Moon+ Reader** (Android) to your PC as clean, formatted HTML files.
+Standalone Python tool to export highlights and notes from **[Moon+ Reader](https://www.moondownload.com/)** (Android) to your PC as clean, formatted HTML files.
 
 This script **does not require Calibre** and works with or without **Root**. It uses [ADB](https://developer.android.com/tools/adb) (included).
 
@@ -30,9 +30,9 @@ Furthermore:
 
 ## Prerequisites
 
-1.  **Python 3.6+** installed on your computer.
-2.  **USB Debugging** enabled on your Android device.
-3.  **(Optional) Bundled ADB:** `adb.exe` (and its DLLs) can be found in the `/adb` folder next to the script. Otherwise, the script can use your system's ADB.
+1.  **[Python](https://www.python.org/downloads/)** installed on your computer.
+2.  **[USB Debugging](https://www.embarcadero.com/starthere/xe5/mobdevsetup/android/en/enabling_usb_debugging_on_an_android_device.html)** enabled on your Android device.
+3.  **[ADB](https://developer.android.com/tools/adb):** `adb.exe` (and its DLLs) can be found in the `/adb` folder next to the script. Otherwise, the script can use your system's ADB.
 
 ## Installation
 
